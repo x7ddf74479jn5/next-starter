@@ -1,7 +1,8 @@
 /**
  * @jest-environment jsdom
  */
-import { fireEvent, render } from "@testing-library/react";
+// import { fireEvent, render } from "test/testUtils";
+import { fireEvent, render } from "jest/testUtils";
 import Home from "src/pages";
 
 describe("Home page", () => {
