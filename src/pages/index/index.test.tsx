@@ -1,9 +1,8 @@
 /**
  * @jest-environment jsdom
  */
-// import { fireEvent, render } from "test/testUtils";
-import { fireEvent, render } from "jest/testUtils";
-import Home from "src/pages";
+import { fireEvent, render } from "jest/test-utils";
+import Home from "src/pages/index.page";
 
 describe("Home page", () => {
   it("matches snapshot", () => {
