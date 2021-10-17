@@ -1,6 +1,6 @@
 import type { VFC } from "react";
 
-import { NavLink } from "../components/Button/NavLink";
+import { NavLink } from "../components/buttons/Navlink";
 
 const items = [
   { href: "/", label: "Home" },
