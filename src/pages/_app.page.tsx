@@ -1,20 +1,14 @@
 import "src/styles/global.css";
 
-import type { NextPage } from "next";
-import type { AppProps } from "next/app";
-import type { ReactElement, ReactNode } from "react";
+import type { AppPropsWithLayout } from "next/app";
 import { usePageView } from "src/lib/gtag";
 
-type NextPageWithLayout = NextPage & {
-  getLayout?: (page: ReactElement) => ReactNode;
-};
-
-type AppPropsWithLayout = AppProps & {
-  // eslint-disable-next-line @typescript-eslint/naming-convention
-  Component: NextPageWithLayout;
-};
-
 const App = ({ Component, pageProps }: AppPropsWithLayout) => {
+  // if (process.env.NODE_ENV === 'development') {
+  //   const MockServer = () => import('mocks//msw/worker');
+  //   MockServer();
+  // }
+
   usePageView();
 
   const getLayout =
