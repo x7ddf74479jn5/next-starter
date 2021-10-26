@@ -3,6 +3,7 @@ import type { RenderResult } from "@testing-library/react";
 import { render } from "@testing-library/react";
 import { RouterContext } from "next/dist/shared/lib/router-context";
 import React from "react";
+
 import { mockRouter } from "./mocks";
 
 // const mockInitialState = {};
@@ -18,8 +19,8 @@ const customRender = (ui: React.ReactElement, options = {}): RenderResult<typeof
 };
 
 // re-export everything
-export * from "@testing-library/react";
 export * from "./mocks";
+export * from "@testing-library/react";
 
 // override render method
 export { customRender as render };
