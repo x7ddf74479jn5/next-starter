@@ -30,6 +30,11 @@ module.exports = {
         name: "have_props",
         message: "Does it have props?",
       },
+      {
+        type: "confirm",
+        name: "have_hooks",
+        message: "Is it have hooks?",
+      },
     ];
     return inquirer.prompt(questions).then((answers) => {
       const { page_name, dir, have_props, slug, page_generation } = answers;

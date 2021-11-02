@@ -9,6 +9,10 @@ import type {<%= TGetStaticPaths %> GetServerSideProps, InferGetServerSidePropsT
 <% if (is_dynamic) { -%>
 import type { ParsedUrlQuery } from "node:querystring";
 <% } -%>
+<% if (have_hooks) { -%>
+
+import { useHook } from './hooks'
+<% } -%>
 
 <% if (have_props && is_SG) { -%>
 type Props = InferGetStaticPropsType<typeof getStaticProps>;
@@ -17,6 +21,10 @@ type Props = InferGetServerSidePropsType<typeof getServerSideProps>;
 <% } -%>
 
 const <%= h.changeCase.pascal(page_name) %>: <%- type_annotate %> = () => {
+<% if (have_hooks) { -%>
+  const hook = useHook();
+<% } -%>
+
   return (
     <<%= tag %>>
     
