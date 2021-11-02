@@ -1,18 +1,18 @@
 ---
-to: <%= abs_path %>/<%= component_name %>.stories.tsx
+to: <%= abs_path %>/<%= h.changeCase.pascal(component_name) %>.stories.tsx
 ---
 import type { ComponentMeta, ComponentStory } from "@storybook/react";
 
-import { <%= component_name %> } from "./";
+import { <%= h.changeCase.pascal(component_name) %> } from "./";
 
 export default {
-  title: "<%= abs_path %>/<%= component_name %>",
-  component: <%= component_name %>,
-} as ComponentMeta<typeof <%= component_name %>>;
+  title: "<%= abs_path %>/<%= h.changeCase.pascal(component_name) %>",
+  component: <%= h.changeCase.pascal(component_name) %>,
+} as ComponentMeta<typeof <%= h.changeCase.pascal(component_name) %>>;
 
-const Template: ComponentStory<typeof <%= component_name %>> = (args) => {
+const Template: ComponentStory<typeof <%= h.changeCase.pascal(component_name) %>> = (args) => {
   return (
-    <<%= component_name %> {...args} />
+    <<%= h.changeCase.pascal(component_name) %> {...args} />
   );
 };
 

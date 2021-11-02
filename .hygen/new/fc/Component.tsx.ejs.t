@@ -1,16 +1,23 @@
 ---
-to: <%= abs_path %>/<%= component_name %>.tsx
+to: <%= abs_path %>/<%= h.changeCase.pascal(component_name) %>.tsx
 ---
+<% if (have_hooks) { -%>
+import { useHook } from './hooks'
+<% } -%>
 <% if (have_style) { -%>
 import style from "./style.module.css"
 <% } -%>
-<% if (have_props) { -%>
 
+<% if (have_props) { -%>
 export type Props = {
 };
 <% } -%>
 
-export const <%= component_name %>: <%- type_annotate %> = () => {
+export const <%= h.changeCase.pascal(component_name) %>: <%- type_annotate %> = () => {
+<% if (have_hooks) { -%>
+  const hook = useHook();
+<% } -%>
+
   return (
 <% if (have_style) { -%>
     <<%= tag %> className={style.module}>
