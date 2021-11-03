@@ -4,11 +4,9 @@
   "license": "MIT",
   "scripts": {
     "dev": "next dev",
-    "build": "run-s -l -c --aggregate-output clean build-next",
-    "export": "run-s -l -c --aggregate-output clean build-next export-next",
-    "build-next": "next build",
-    "export-next": "next export",
-    "clean": "rimraf .next out",
+    "build": "next build",
+    "export": "next export",
+    "prebuild": "rimraf .next out",
     "start": "next start",
     "lint": "run-p -l -c --aggregate-output lint:*",
     "lint:eslint": "eslint --cache .",
@@ -61,6 +59,7 @@
     "eslint-plugin-jsx-a11y": "6.4.1",
     "eslint-plugin-simple-import-sort": "7.0.0",
     "husky": "7.0.2",
+    "hygen": "6.1.0",
     "identity-obj-proxy": "3.0.0",
     "jest": "27.2.5",
     "jest-watch-typeahead": "1.0.0",
@@ -77,5 +76,8 @@
   "lint-staged": {
     "*.{ts,tsx}": "yarn fix:eslint",
     "*": "yarn fix:prettier"
+  },
+  "msw": {
+    "workerDirectory": "public"
   }
 }
