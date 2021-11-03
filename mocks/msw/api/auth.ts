@@ -1,6 +1,6 @@
-import type { MockedRequest, ResponseResolver, restContext } from "msw";
+import type { ResponseResolver, RestContext, RestRequest } from "msw";
 
-export const mockLogin: ResponseResolver<MockedRequest, typeof restContext> = async (req, res, ctx) => {
+export const mockLogin: ResponseResolver<RestRequest, RestContext> = async (req, res, ctx) => {
   return res(
     ctx.status(200),
     ctx.json({
@@ -9,6 +9,6 @@ export const mockLogin: ResponseResolver<MockedRequest, typeof restContext> = as
   );
 };
 
-export const mockLogout: ResponseResolver<MockedRequest, typeof restContext> = (req, res, ctx) => {
+export const mockLogout: ResponseResolver<RestRequest, RestContext> = (req, res, ctx) => {
   return res(ctx.status(200), ctx.json("logout"));
 };
