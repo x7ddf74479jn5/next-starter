@@ -2,7 +2,7 @@
 to: <%= abs_path %>/<%= h.changeCase.pascal(component_name) %>.tsx
 ---
 <% if (have_hooks) { -%>
-import { useHook } from './hooks'
+import { useHook } from './hook'
 <% } -%>
 <% if (have_style) { -%>
 import style from "./style.module.css"

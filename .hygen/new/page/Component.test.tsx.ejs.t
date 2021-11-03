@@ -9,7 +9,7 @@ import { render, screen } from "jest/test-utils";
 import renderer from "react-test-renderer";
 
 <% if (have_hooks) { -%>
-import { useHook } from './hooks'
+import { useHook } from './hook'
 <% } -%>
 import <%= h.changeCase.pascal(page_name) %> from "./<%= file_name %>.page";
 

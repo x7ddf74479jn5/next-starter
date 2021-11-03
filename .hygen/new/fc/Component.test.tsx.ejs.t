@@ -10,7 +10,7 @@ import renderer from "react-test-renderer";
 
 import { <%= h.changeCase.pascal(component_name) %> } from "./";
 <% if (have_hooks) { -%>
-import { useHook } from './hooks'
+import { useHook } from './hook'
 <% } -%>
 
 describe("<%= path %>", () => {

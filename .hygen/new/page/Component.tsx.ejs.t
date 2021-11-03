@@ -11,7 +11,7 @@ import type { ParsedUrlQuery } from "node:querystring";
 <% } -%>
 <% if (have_hooks) { -%>
 
-import { useHook } from './hooks'
+import { useHook } from './hook'
 <% } -%>
 
 <% if (have_props && is_SG) { -%>
