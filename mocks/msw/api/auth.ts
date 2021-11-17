@@ -1,6 +1,7 @@
 import type { ResponseResolver, RestContext, RestRequest } from "msw";
+import { rest } from "msw";
 
-export const mockLogin: ResponseResolver<RestRequest, RestContext> = async (req, res, ctx) => {
+const mockLogin: ResponseResolver<RestRequest, RestContext> = async (req, res, ctx) => {
   return res(
     ctx.status(200),
     ctx.json({
@@ -9,6 +10,10 @@ export const mockLogin: ResponseResolver<RestRequest, RestContext> = async (req,
   );
 };
 
-export const mockLogout: ResponseResolver<RestRequest, RestContext> = (req, res, ctx) => {
+const mockLogout: ResponseResolver<RestRequest, RestContext> = (req, res, ctx) => {
   return res(ctx.status(200), ctx.json("logout"));
 };
+
+const API = "https://localhost:3000/api";
+
+export const mockAuthHandlers = [rest.post(`${API}/login`, mockLogin), rest.post(`${API}/logout`, mockLogout)];
