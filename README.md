@@ -15,7 +15,7 @@
 - Jest
 
 ```shell
-rimraf jest jest.config.js
+rm -rf jest jest.config.js
 yarn remove @swc/core @swc/jest @testing-library/jest-dom @testing-library/react @testing-library/react-hooks @types/jest @types/react-test-renderer @types/testing-library__react identity-obj-proxy jest jest-watch-typeahead react-test-renderer
 sed -i -e '/jest/d' package.json
 ```
@@ -23,7 +23,7 @@ sed -i -e '/jest/d' package.json
 - Storybook
 
 ```shell
-rimraf .storybook .github/workflow/storybook.yml
+rm -rf .storybook .github/workflow/storybook.yml
 yarn remove @storybook/addon-a11y @storybook/addon-a11y @storybook/react storybook-addon-performance
 sed -i -e '/storybook/d' package.json
 ```
@@ -31,14 +31,14 @@ sed -i -e '/storybook/d' package.json
 - MSW
 
 ```shell
-rimraf mocks/msw mockServiceWorker.js
+rm -rf mocks/msw mockServiceWorker.js
 yarn remove msw
 ```
 
 - Hygen
 
 ```shell
-rimraf .hygen .hygen.js
+rm -rf .hygen .hygen.js
 yarn remove hygen
 sed -i -e '/hygen/d' package.json
 ```
@@ -46,6 +46,6 @@ sed -i -e '/hygen/d' package.json
 - Google Analytics
 
 ```shell
-rimraf src/lib/gtag.tsx src/types/gtm-evet.d.ts
+rm -rf src/lib/gtag.tsx src/types/gtm-evet.d.ts
 yarn remove @types/gtag.js
 ```
