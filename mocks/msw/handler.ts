@@ -1,3 +1,3 @@
-import { mockAuthHandlers } from "./api/auth";
+import { mockAuthHandlers } from "./api/next/auth";
 
 export const handlers = [...mockAuthHandlers];

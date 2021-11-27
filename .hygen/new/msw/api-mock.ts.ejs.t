@@ -1,5 +1,5 @@
 ---
-to: "<%= have_mock ? `${mock_path}${api_name}.ts` : null %>" 
+to: <%= mock_path %><%= api_name %>.ts
 ---
 import type { ResponseResolver, RestContext, RestRequest } from "msw";
 import { rest } from "msw";
