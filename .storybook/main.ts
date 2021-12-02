@@ -8,7 +8,10 @@ module.exports = {
     "@storybook/addon-links",
     "@storybook/addon-essentials",
     "@storybook/addon-actions",
-    // postcss option
+    "@storybook/addon-interactions",
+    "@storybook/addon-a11y",
+    "storybook-addon-performance",
+    // NOTE: postcss option
     // {
     //   name: "@storybook/addon-postcss",
     //   options: {
@@ -17,9 +20,10 @@ module.exports = {
     //     },
     //   },
     // },
-    "@storybook/addon-a11y",
-    "storybook-addon-performance",
   ],
+  features: {
+    interactionsDebugger: true,
+  },
   typescript: {
     check: false,
     checkOptions: {},
@@ -29,4 +33,24 @@ module.exports = {
       propFilter: (prop) => (prop.parent ? !/node_modules/.test(prop.parent.fileName) : true),
     },
   },
+  // NOTE: scss option
+  // webpackFinal: async (baseConfig) => {
+  //   baseConfig.module.rules.push({
+  //     test: /\.scss$/,
+  //     use: [
+  //       "style-loader",
+  //       {
+  //         loader: "css-loader",
+  //         options: {
+  //           importLoaders: 1,
+  //           modules: {
+  //             localIdentName: "[local]___[hash:base64:2]",
+  //           },
+  //         },
+  //       },
+  //       "sass-loader",
+  //     ],
+  //   });
+  //   return { ...baseConfig };
+  // },
 };
