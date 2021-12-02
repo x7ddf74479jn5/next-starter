@@ -24,7 +24,7 @@ sed -i -e '/jest/d' package.json
 
 ```shell
 rm -rf .storybook .github/workflow/storybook.yml
-yarn remove @storybook/addon-a11y @storybook/addon-a11y @storybook/react storybook-addon-performance
+yarn remove @storybook/addon-a11y @storybook/addon-a11y @storybook/react storybook-addon-performance @storybook/addon-interactions @storybook/testing-library
 sed -i -e '/storybook/d' package.json
 ```
 
