@@ -102,4 +102,25 @@ module.exports = {
       },
     ],
   },
+  overrides: [
+    {
+      files: ["playwright.config.ts", "src/pages/**/*.ts(x)", "next.config.mjs"],
+      rules: { "import/no-default-export": "off" },
+    },
+    {
+      files: ["src/pages/**/*.ts(x)", "next.config.mjs", "src/types/**/*.d.ts"],
+      rules: {
+        "@typescript-eslint/naming-convention": [
+          "error",
+          { selector: ["typeAlias", "typeParameter"], format: ["PascalCase"] },
+          { selector: ["classProperty", "method"], format: ["camelCase"] },
+          { selector: "variable", types: ["boolean"], format: ["PascalCase"], prefix: ["is", "has", "should"] },
+        ],
+      },
+    },
+    {
+      files: ["**/__tests__/**/*.[jt]s?(x)", "**/?(*.)+(spec|test).[jt]s?(x)"],
+      extends: ["plugin:testing-library/react"],
+    },
+  ],
 };
