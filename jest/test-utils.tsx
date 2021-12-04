@@ -1,17 +1,20 @@
 import type Queries from "@testing-library/dom/types/queries";
 import type { RenderResult } from "@testing-library/react";
 import { render } from "@testing-library/react";
-import { RouterContext } from "next/dist/shared/lib/router-context";
 import React from "react";
-
-import { mockRouter } from "./mocks";
 
 // const mockInitialState = {};
 
 // const mockContextValue = {};
 
 export const Providers: React.ComponentType<{ children?: React.ReactNode }> = ({ children }) => {
-  return <RouterContext.Provider value={mockRouter}>{children}</RouterContext.Provider>;
+  return (
+    <>
+      {/* <Context.Provider value={initialValue}> */}
+      {children}
+      {/* </Context.Provider> */}
+    </>
+  );
 };
 
 const customRender = (ui: React.ReactElement, options = {}): RenderResult<typeof Queries, HTMLElement> => {
@@ -24,8 +27,3 @@ export * from "@testing-library/react";
 
 // override render method
 export { customRender as render };
-
-export const reTestCase = {
-  anyWord: expect.stringMatching(/\w+/),
-  anyImage: expect.stringMatching(/^(data:image\/gif)|\.(png|webp|jpeg|jpg|svg)$/),
-};
