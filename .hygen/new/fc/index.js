@@ -7,8 +7,8 @@ module.exports = {
       {
         type: "select",
         name: "category",
-        message: "Which Atomic Design category?",
-        choices: ["atoms", "molecules", "organisms", "templates"],
+        message: "Which Design category?",
+        choices: ["page", "model", "ui", "functional"],
       },
       {
         type: "input",

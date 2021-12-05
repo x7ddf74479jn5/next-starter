@@ -1,5 +1,5 @@
 ---
-to: <%= abs_path %>/<%= file_name %>.page.tsx
+to: <%= abs_path %>/<%= file_name %>.tsx
 ---
 <% if (have_props && is_SG) { -%>
 import type {<%= TGetStaticPaths %> GetStaticProps, InferGetStaticPropsType, NextPage } from "next";
@@ -23,15 +23,12 @@ type Props = InferGetServerSidePropsType<typeof getServerSideProps>;
 const <%= h.changeCase.pascal(page_name) %>: <%- type_annotate %> = () => {
 <% if (have_hooks) { -%>
   const hook = useHook();
-<% } -%>
 
-  return (
-    <<%= tag %>>
-    
-    </<%= tag %>>
-  );
+<% } -%>
+  return <<%= h.changeCase.pascal(page_name) %> />
 }
 
+// <%= h.changeCase.pascal(page_name) %>.getLayout = 
 <% if (is_dynamic) { -%>
 interface Params extends ParsedUrlQuery {
   <%= slug %>?: string;

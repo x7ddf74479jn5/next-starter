@@ -5,7 +5,7 @@ to: <%= abs_path %>/<%= h.changeCase.pascal(component_name) %>.test.tsx
 import type { RenderResult } from "@testing-library/react-hooks";
 import { renderHook } from "@testing-library/react-hooks";
 <% } -%>
-import { render, screen } from "jest/test-utils";
+import { render, screen } from "@testing-library/react";
 import renderer from "react-test-renderer";
 
 import { <%= h.changeCase.pascal(component_name) %> } from "./";
@@ -21,7 +21,7 @@ describe("<%= path %>", () => {
   });
 
   it("", () => {
-    const { container } = render(<<%= h.changeCase.pascal(component_name) %> />);
+    render(<<%= h.changeCase.pascal(component_name) %> />);
     screen.debug();
   });
 <% if (have_hooks) { -%>

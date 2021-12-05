@@ -5,13 +5,13 @@ to: <%= abs_path %>/<%= page_name %>.test.tsx
 import type { RenderResult } from "@testing-library/react-hooks";
 import { renderHook } from "@testing-library/react-hooks";
 <% } -%>
-import { render, screen } from "jest/test-utils";
+import { render, screen } from "@testing-library/react";
 import renderer from "react-test-renderer";
 
 <% if (have_hooks) { -%>
 import { useHook } from './hook'
 <% } -%>
-import <%= h.changeCase.pascal(page_name) %> from "./<%= file_name %>.page";
+import <%= h.changeCase.pascal(page_name) %> from "./<%= file_name %>";
 
 describe("<%= path %>", () => {
   it("Snapshot", () => {
@@ -21,7 +21,7 @@ describe("<%= path %>", () => {
   });
 
     it("", () => {
-    const { container } = render(<<%= h.changeCase.pascal(page_name) %> />);
+    render(<<%= h.changeCase.pascal(page_name) %> />);
     screen.debug();
   });
 <% if (have_hooks) { -%>

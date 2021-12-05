@@ -1,5 +1,5 @@
 //
-// npm run new:page -- --tag=p
+// npm run new:page
 //
 module.exports = {
   prompt: ({ inquirer, args }) => {
@@ -47,13 +47,11 @@ module.exports = {
       const abs_path = `src/pages/${path}`;
       const file_name = is_dynamic ? `[${slug}]` : "index";
       const type_annotate = have_props ? `NextPage<Props>` : "NextPage";
-      const tag = args.tag ? args.tag : "div";
       return {
         ...answers,
         path,
         abs_path,
         type_annotate,
-        tag,
         is_ISR,
         is_SG,
         is_SSR,

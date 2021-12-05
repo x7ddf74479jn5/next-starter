@@ -2,6 +2,7 @@
 to: <%= abs_path %>/<%= h.changeCase.pascal(component_name) %>.stories.tsx
 ---
 import type { ComponentMeta, ComponentStory } from "@storybook/react";
+import { userEvent, within } from "@storybook/testing-library";
 
 import { <%= h.changeCase.pascal(component_name) %> } from "./";
 
@@ -17,7 +18,7 @@ const Template: ComponentStory<typeof <%= h.changeCase.pascal(component_name) %>
 };
 
 export const Default = Template.bind({});
-
-Default.args = {
-
+Default.args = {};
+Default.play = async ({ canvasElement }) => {
+  const canvas = within(canvasElement);
 };
