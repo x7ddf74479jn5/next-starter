@@ -1,7 +1,6 @@
 import type Queries from "@testing-library/dom/types/queries";
 import type { RenderResult } from "@testing-library/react";
 import { render } from "@testing-library/react";
-import React from "react";
 
 // const mockInitialState = {};
 
