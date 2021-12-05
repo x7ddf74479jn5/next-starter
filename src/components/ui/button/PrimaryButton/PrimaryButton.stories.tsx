@@ -1,7 +1,7 @@
 import type { ComponentMeta, ComponentStory } from "@storybook/react";
 import { userEvent, within } from "@storybook/testing-library";
 
-import { PrimaryButton } from "./";
+import { PrimaryButton } from ".";
 
 export default {
   title: "src/components/atoms/buttons/PrimaryButton/PrimaryButton",

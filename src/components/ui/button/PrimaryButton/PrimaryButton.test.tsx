@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import renderer from "react-test-renderer";
 
-import { PrimaryButton } from "./";
+import { PrimaryButton } from ".";
 
 describe("atoms/buttons/PrimaryButton", () => {
   it("Snapshot", () => {
