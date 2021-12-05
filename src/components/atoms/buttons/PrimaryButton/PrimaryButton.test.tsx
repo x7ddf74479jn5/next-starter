@@ -1,4 +1,4 @@
-import { render, screen } from "jest/test-utils";
+import { render, screen } from "@testing-library/react";
 import renderer from "react-test-renderer";
 
 import { PrimaryButton } from "./";
