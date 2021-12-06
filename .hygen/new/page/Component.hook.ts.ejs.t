@@ -1,7 +1,7 @@
 ---
-to: "<%= have_hooks ? `${abs_path}/hook.ts` : null %>"
+to: <% if(have_hooks) { %><%= abs_path %>/<%= h.changeCase.pascal(page_name) %>.hook.ts<% } else { %>null<% } %>
 ---
-export const useHook = () => {
+export const use<%= h.changeCase.pascal(page_name) %> = () => {
   return {}
 };
 

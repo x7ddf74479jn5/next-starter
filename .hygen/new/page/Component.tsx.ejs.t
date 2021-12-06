@@ -2,16 +2,18 @@
 to: <%= abs_path %>/<%= file_name %>.tsx
 ---
 <% if (have_props && is_SG) { -%>
-import type {<%= TGetStaticPaths %> GetStaticProps, InferGetStaticPropsType, NextPage } from "next";
+import type {<%= TGetStaticPaths %> CustomNextPage, GetStaticProps, InferGetStaticPropsType } from "next";
 <% } else if (have_props && is_SSR) { -%>
-import type {<%= TGetStaticPaths %> GetServerSideProps, InferGetServerSidePropsType, NextPage } from "next";
+import type {<%= TGetStaticPaths %> CustomNextPage, GetServerSideProps, InferGetServerSidePropsType } from "next";
+<% } else if (!have_props) { -%>
+import type {<%= TGetStaticPaths %> CustomNextPage } from "next";
 <% } -%>
 <% if (is_dynamic) { -%>
 import type { ParsedUrlQuery } from "node:querystring";
 <% } -%>
 <% if (have_hooks) { -%>
 
-import { useHook } from './hook'
+import { use<%= h.changeCase.pascal(page_name) %> } from './<%= h.changeCase.pascal(page_name) %>.hook'
 <% } -%>
 
 <% if (have_props && is_SG) { -%>
@@ -22,7 +24,7 @@ type Props = InferGetServerSidePropsType<typeof getServerSideProps>;
 
 const <%= h.changeCase.pascal(page_name) %>: <%- type_annotate %> = () => {
 <% if (have_hooks) { -%>
-  const hook = useHook();
+  const hook = use<%= h.changeCase.pascal(page_name) %>();
 
 <% } -%>
   return <<%= h.changeCase.pascal(page_name) %> />

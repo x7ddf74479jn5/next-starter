@@ -46,7 +46,7 @@ module.exports = {
       const TGetStaticPaths = is_dynamic ? " GetStaticPaths," : "";
       const abs_path = `src/pages/${path}`;
       const file_name = is_dynamic ? `[${slug}]` : "index";
-      const type_annotate = have_props ? `NextPage<Props>` : "NextPage";
+      const type_annotate = have_props ? `CustomNextPage<Props>` : "CustomNextPage";
       return {
         ...answers,
         path,

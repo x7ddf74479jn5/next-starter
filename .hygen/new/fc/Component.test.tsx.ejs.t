@@ -10,7 +10,7 @@ import renderer from "react-test-renderer";
 
 import { <%= h.changeCase.pascal(component_name) %> } from "./";
 <% if (have_hooks) { -%>
-import { useHook } from './hook'
+import { use<%= h.changeCase.pascal(component_name) %> } from './<%= h.changeCase.pascal(component_name) %>.hook'
 <% } -%>
 
 describe("<%= path %>", () => {
@@ -27,7 +27,7 @@ describe("<%= path %>", () => {
 <% if (have_hooks) { -%>
 
   it("", () => {
-    const { result } = renderHook(() => useHook());
+    const { result } = renderHook(() => use<%= h.changeCase.pascal(component_name) %>());
   });  
 <% } -%>
 });
