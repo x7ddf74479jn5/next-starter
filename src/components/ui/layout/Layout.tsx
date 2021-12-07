@@ -1,14 +1,16 @@
-import { Footer } from "src/components/ui/layout/Footer";
-import { Header } from "src/components/ui/layout/Header";
-import { LayoutErrorBoundary } from "src/components/ui/layout/LayoutErrorBoundary";
+import type { CustomLayout } from "next";
 
-export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+import { Footer } from "./Footer";
+import { Header } from "./Header";
+import { LayoutErrorBoundary } from "./LayoutErrorBoundary";
+
+export const Layout: CustomLayout = (page) => {
   return (
     <>
       <Header />
-      <LayoutErrorBoundary>
-        <main>{children}</main>
-      </LayoutErrorBoundary>
+      <main>
+        <LayoutErrorBoundary>{page}</LayoutErrorBoundary>
+      </main>
       <Footer />
     </>
   );
