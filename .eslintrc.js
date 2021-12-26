@@ -92,7 +92,13 @@ module.exports = {
   },
   overrides: [
     {
-      files: ["playwright.config.ts", "src/pages/**/*.ts(x)", "next.config.mjs", "src/**/*.stories.tsx"],
+      files: [
+        "playwright.config.ts",
+        "src/pages/**/*.tsx",
+        "src/pages/api/**/*.ts",
+        "next.config.mjs",
+        "src/**/*.stories.tsx",
+      ],
       rules: { "import/no-default-export": "off" },
     },
     {
