@@ -15,7 +15,7 @@
     "test": "run-p -l -c --aggregate-output lint prettier unit",
     "fix": "run-s -l -c fix:lint fix:prettier",
     "fix:lint": "next lint --fix",
-    "fix:prettier": "prettier -write .",
+    "fix:prettier": "prettier --write .",
     "storybook": "start-storybook -p 6006 -s ./mocks/data",
     "build-storybook": "build-storybook",
     "prepare": "husky install"
