@@ -4,7 +4,7 @@ import { userEvent, within } from "@storybook/testing-library";
 import { PrimaryButton } from ".";
 
 export default {
-  title: "src/components/atoms/buttons/PrimaryButton/PrimaryButton",
+  title: "src/components/atoms/buttons/PrimaryButton",
   component: PrimaryButton,
 } as ComponentMeta<typeof PrimaryButton>;
 

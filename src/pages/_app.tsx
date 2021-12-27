@@ -1,7 +1,7 @@
-import "src/styles/global.css";
+import "@/styles/global.css";
 
 import type { CustomAppProps } from "next/app";
-// import { usePageView } from "src/lib/gtag";
+// import { usePageView } from "@/lib/gtag";
 
 const App = ({ Component, pageProps }: CustomAppProps) => {
   // if (process.env.NODE_ENV === 'development') {

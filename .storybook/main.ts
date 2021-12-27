@@ -33,24 +33,35 @@ module.exports = {
       propFilter: (prop) => (prop.parent ? !/node_modules/.test(prop.parent.fileName) : true),
     },
   },
-  // NOTE: scss option
-  // webpackFinal: async (baseConfig) => {
-  //   baseConfig.module.rules.push({
-  //     test: /\.scss$/,
-  //     use: [
-  //       "style-loader",
-  //       {
-  //         loader: "css-loader",
-  //         options: {
-  //           importLoaders: 1,
-  //           modules: {
-  //             localIdentName: "[local]___[hash:base64:2]",
-  //           },
-  //         },
-  //       },
-  //       "sass-loader",
-  //     ],
-  //   });
-  //   return { ...baseConfig };
-  // },
+  webpackFinal: async (config) => {
+    return {
+      ...config,
+      resolve: {
+        ...config.resolve,
+        alias: {
+          ...config.resolve.alias,
+          "@": toPath("../src"),
+        },
+      },
+      // NOTE: scss option
+      // module: {
+      //   rules: {
+      //     test: /\.scss$/,
+      //     use: [
+      //       "style-loader",
+      //       {
+      //         loader: "css-loader",
+      //         options: {
+      //           importLoaders: 1,
+      //           modules: {
+      //             localIdentName: "[local]___[hash:base64:2]",
+      //           },
+      //         },
+      //       },
+      //       "sass-loader",
+      //     ],
+      //   },
+      // },
+    };
+  },
 };

@@ -1,5 +1,6 @@
 import Head from "next/head";
-import { PrimaryButton } from "src/components/ui/button";
+
+import { PrimaryButton } from "@/components/ui/button";
 
 export const Home: React.VFC = () => {
   const handleClick = () => {

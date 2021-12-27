@@ -1,6 +1,7 @@
 import type { CustomNextPage } from "next";
-import { About } from "src/components/page/about";
-import { Layout } from "src/components/ui/layout";
+
+import { About } from "@/components/page/about";
+import { Layout } from "@/components/ui/layout";
 
 const AboutPage: CustomNextPage = () => {
   return <About />;
