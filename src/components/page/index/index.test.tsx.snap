@@ -5,7 +5,9 @@ exports[`Home page matches snapshot 1`] = `
   <h2>
     Home
   </h2>
-  <button>
+  <button
+    type="button"
+  >
     Button
   </button>
 </DocumentFragment>

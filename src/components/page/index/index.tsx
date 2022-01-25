@@ -14,7 +14,9 @@ export const Home: React.VFC = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <h2>Home</h2>
-      <PrimaryButton onClick={handleClick}>Button</PrimaryButton>
+      <PrimaryButton tag="button" onClick={handleClick}>
+        Button
+      </PrimaryButton>
     </>
   );
 };
