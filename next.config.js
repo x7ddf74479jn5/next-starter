@@ -10,4 +10,4 @@ const nextConfig = {
   // experimental: { concurrentFeatures: true, serverComponents: true },
 };
 
-export default nextConfig;
+module.exports = nextConfig;

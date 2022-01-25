@@ -96,7 +96,7 @@ module.exports = {
         "playwright.config.ts",
         "src/pages/**/*.tsx",
         "src/pages/api/**/*.ts",
-        "next.config.mjs",
+        "next.config.js",
         "src/**/*.stories.tsx",
       ],
       rules: { "import/no-default-export": "off" },

@@ -11,16 +11,12 @@ module.exports = {
     "@storybook/addon-interactions",
     "@storybook/addon-a11y",
     "storybook-addon-performance",
-    // NOTE: postcss option
-    // {
-    //   name: "@storybook/addon-postcss",
-    //   options: {
-    //     postcssLoaderOptions: {
-    //       implementation: require("postcss"),
-    //     },
-    //   },
-    // },
+    "storybook-addon-next",
   ],
+  staticDirs: ["../mocks/data"],
+  core: {
+    builder: "webpack5",
+  },
   features: {
     interactionsDebugger: true,
   },
@@ -43,25 +39,6 @@ module.exports = {
           "@": toPath("../src"),
         },
       },
-      // NOTE: scss option
-      // module: {
-      //   rules: {
-      //     test: /\.scss$/,
-      //     use: [
-      //       "style-loader",
-      //       {
-      //         loader: "css-loader",
-      //         options: {
-      //           importLoaders: 1,
-      //           modules: {
-      //             localIdentName: "[local]___[hash:base64:2]",
-      //           },
-      //         },
-      //       },
-      //       "sass-loader",
-      //     ],
-      //   },
-      // },
     };
   },
 };

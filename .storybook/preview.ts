@@ -1,8 +1,6 @@
-import { withPerformance } from "storybook-addon-performance";
-import "../src/styles/global.css";
+import "@/styles/global.css";
 
-/** Mock next/image to <img /> */
-import "./mocks/NextImage";
+import { withPerformance } from "storybook-addon-performance";
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
