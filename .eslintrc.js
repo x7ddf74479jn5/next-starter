@@ -4,7 +4,7 @@ module.exports = {
   parserOptions: {
     project: "./tsconfig.json",
   },
-  plugins: ["simple-import-sort", "testing-library"],
+  plugins: ["simple-import-sort", "sort-destructure-keys", "testing-library"],
   extends: [
     "plugin:@typescript-eslint/recommended",
     "next/core-web-vitals",
