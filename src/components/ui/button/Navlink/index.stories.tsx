@@ -4,7 +4,7 @@ import { userEvent, within } from "@storybook/testing-library";
 import { NavLink } from ".";
 
 export default {
-  title: "atoms/buttons/NavLink",
+  title: "ui/button/NavLink",
   component: NavLink,
   parameters: {
     nextRouter: {

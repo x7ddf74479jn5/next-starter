@@ -4,13 +4,19 @@ import { userEvent, within } from "@storybook/testing-library";
 import { PrimaryButton } from ".";
 
 export default {
-  title: "atoms/buttons/PrimaryButton",
+  title: "ui/button/PrimaryButton",
   component: PrimaryButton,
 } as ComponentMeta<typeof PrimaryButton>;
 
+const handleClick = () => {
+  alert("Clicked!");
+};
+
 export const Index: ComponentStoryObj<typeof PrimaryButton> = {
   args: {
+    tag: "button",
     children: "label",
+    onClick: handleClick,
   },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
