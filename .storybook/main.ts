@@ -12,6 +12,7 @@ module.exports = {
     "@storybook/addon-a11y",
     "storybook-addon-performance",
     "storybook-addon-next",
+    "storybook-dark-mode",
   ],
   staticDirs: ["../mocks/data"],
   core: {
