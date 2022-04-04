@@ -1,6 +1,7 @@
 import "@/styles/global.css";
 
 import type { CustomAppProps } from "next/app";
+import { memo } from "react";
 // import { usePageView } from "@/lib/gtag";
 
 const App = ({ Component, pageProps }: CustomAppProps) => {
@@ -20,4 +21,4 @@ const App = ({ Component, pageProps }: CustomAppProps) => {
   return getLayout(<Component {...pageProps} />);
 };
 
-export default App;
+export default memo(App);
