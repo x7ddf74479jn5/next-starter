@@ -102,7 +102,7 @@ module.exports = {
       rules: { "import/no-default-export": "off" },
     },
     {
-      files: ["src/pages/**/*.tsx", "src/pages/api/**/*.ts", "next.config.js", "src/types/**/*.d.ts"],
+      files: ["src/pages/**/*.tsx", "src/pages/api/**/*.ts", "next.config.js", "src/types/**/*.d.ts", "jest.config.js"],
       rules: {
         "@typescript-eslint/naming-convention": [
           "error",
