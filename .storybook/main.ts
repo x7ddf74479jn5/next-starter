@@ -39,6 +39,7 @@ module.exports = {
           ...config.resolve.alias,
           "@": toPath("../src"),
         },
+        roots: [path.resolve(__dirname, "../public"), "node_modules"],
       },
     };
   },
