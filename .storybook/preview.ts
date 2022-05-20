@@ -1,5 +1,4 @@
 import "@/styles/global.css";
-
 import { withPerformance } from "storybook-addon-performance";
 
 export const parameters = {

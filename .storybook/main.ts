@@ -1,13 +1,16 @@
+// FIXME: can't start storybook
 const path = require("path");
 
 const toPath = (_path) => path.resolve(__dirname, _path);
 
-module.exports = {
-  stories: ["../src/**/*.stories.mdx", "../src/**/*.stories.@(js|jsx|ts|tsx)"],
+/**
+ * @type {import('@storybook/react/types').StorybookConfig}
+ */
+const config = {
+  stories: ["../src/**/*.stories.tsx"],
   addons: [
     "@storybook/addon-links",
     "@storybook/addon-essentials",
-    "@storybook/addon-actions",
     "@storybook/addon-interactions",
     "@storybook/addon-a11y",
     "storybook-addon-performance",
@@ -16,10 +19,17 @@ module.exports = {
   ],
   staticDirs: ["../mocks/data"],
   core: {
-    builder: "webpack5",
+    builder: {
+      name: "webpack5",
+      options: {
+        lazyCompilation: true,
+        fsCache: true,
+      },
+    },
   },
   features: {
     interactionsDebugger: true,
+    storyStoreV7: true,
   },
   typescript: {
     check: false,
@@ -35,12 +45,11 @@ module.exports = {
       ...config,
       resolve: {
         ...config.resolve,
-        alias: {
-          ...config.resolve.alias,
-          "@": toPath("../src"),
-        },
+        alias: { ...config.resolve.alias, "@": toPath("../src") },
         roots: [path.resolve(__dirname, "../public"), "node_modules"],
       },
     };
   },
 };
+
+module.exports = config;
