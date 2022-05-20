@@ -1,5 +1,4 @@
-import { render, screen } from "@testing-library/react";
-import userEvent from "@testing-library/user-event";
+import { fireEvent, render, screen } from "@testing-library/react";
 import renderer from "react-test-renderer";
 
 import { PrimaryButton } from ".";
@@ -38,7 +37,7 @@ describe("ui/buttons/PrimaryButton", () => {
     );
     const button = screen.getByRole("button", { name: "label" });
     expect(button).toBeEnabled();
-    userEvent.click(button);
+    fireEvent.click(button);
     expect(handleClick).toBeCalled();
   });
 
