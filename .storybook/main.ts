@@ -1,11 +1,10 @@
-// FIXME: can't start storybook
 const path = require("path");
 
 const toPath = (_path) => path.resolve(__dirname, _path);
-
 /**
  * @type {import('@storybook/react/types').StorybookConfig}
  */
+
 const config = {
   stories: ["../src/**/*.stories.tsx"],
   addons: [
@@ -50,6 +49,7 @@ const config = {
       },
     };
   },
+  framework: "@storybook/react",
 };
 
 module.exports = config;
