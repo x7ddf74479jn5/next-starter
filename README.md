@@ -193,4 +193,5 @@ Then, scaffdog will ask you some questions. This is an example of creating Butto
 
 
 ```
+
 The template which would be generated is [here](https://github.com/x7ddf74479jn5/next-starter/blob/main/.scaffdog/ui-component.md). You can customize this file.
