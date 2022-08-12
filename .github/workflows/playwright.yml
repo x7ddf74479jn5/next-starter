@@ -1,16 +1,14 @@
-name: storybook
-
+name: Playwright Tests
 on:
+  pull_request:
+    types: [opened]
+    branches: [main]
   push:
     branches:
-      - develop
-  pull_request:
-    types: [closed]
-    branches: [develop]
-  workflow_dispatch:
+      - main
 
 jobs:
-  build:
+  test:
     timeout-minutes: 5
     runs-on: ubuntu-latest
     steps:
@@ -25,25 +23,16 @@ jobs:
           key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
             ${{ runner.os }}-yarn-
-      - name: install packages
+      - name: Install dependencies
         if: steps.yarn-cache.outputs.cache-hit != 'true'
         run: yarn install
-      - name: build storybook
-        run: yarn build-storybook
-      - uses: actions/upload-pages-artifact@v1
+      - name: Install Playwright Browsers
+        run: npx playwright install --with-deps
+      - name: Run Playwright tests
+        run: yarn playwright test
+      - uses: actions/upload-artifact@v2
+        if: always()
         with:
-          path: storybook-static
-
-  deploy:
-    needs: build
-    permissions:
-      pages: write
-      id-token: write
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v1
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 30
