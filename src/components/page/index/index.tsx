@@ -2,7 +2,7 @@ import Head from "next/head";
 
 import { PrimaryButton } from "@/components/ui/button";
 
-export const Home: React.VFC = () => {
+export const Home: React.FC = () => {
   const handleClick = () => {
     window.alert("Hello, World!");
   };

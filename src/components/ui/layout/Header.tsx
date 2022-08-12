@@ -1,4 +1,4 @@
-import type { VFC } from "react";
+import type { FC } from "react";
 
 import { NavLink } from "@/components/ui/button";
 
@@ -6,7 +6,7 @@ const items = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
 ];
-export const Header: VFC = () => {
+export const Header: FC = () => {
   return (
     <header>
       <h1>Title</h1>

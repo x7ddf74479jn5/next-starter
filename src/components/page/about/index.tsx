@@ -1,6 +1,6 @@
 import Head from "next/head";
 
-export const About: React.VFC = () => {
+export const About: React.FC = () => {
   return (
     <>
       <Head>
