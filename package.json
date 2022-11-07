@@ -50,7 +50,7 @@
     "@types/react": "18.0.25",
     "@types/react-test-renderer": "18.0.0",
     "@typescript-eslint/eslint-plugin": "5.42.1",
-    "babel-loader": "8.3.0",
+    "babel-loader": "9.1.0",
     "eslint": "8.27.0",
     "eslint-config-next": "12.3.2",
     "eslint-config-prettier": "8.5.0",
